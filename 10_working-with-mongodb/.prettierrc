@@ -1,0 +1,10 @@
+{
+  "tabWidth": 4,
+  "formatOnSave": true,
+  "wordWrap": "on",
+  "singleQuote": false,
+  "tabSize": 4,
+  "fontLigatures": true,
+  "detectIndentation": true,
+  "renderIndentGuides": false
+}
