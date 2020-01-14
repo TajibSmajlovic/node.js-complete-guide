@@ -13,11 +13,21 @@ const addProduct = (req, res, next) => {
     const price = req.body.price;
     const description = req.body.description;
     const imageUrl = req.body.imageUrl;
-    const product = new Product(title, price, description, imageUrl);
+    const userId = req.user._id;
+    console.log(userId);
+
+    const product = new Product(
+        title,
+        price,
+        description,
+        imageUrl,
+        null,
+        userId
+    );
     product
         .save()
         .then(() => {
-            console.log("Successful!");
+            // console.log("Successful!");
             res.redirect("/admin/products");
         })
         .catch(err => console.log(err));
