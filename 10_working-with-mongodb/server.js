@@ -19,7 +19,12 @@ server.use((req, res, next) => {
     User.findById("5e1dfd718d8d332884db869c").then(user => {
         if (user) {
             // console.log("User found!");
-            req.user = user;
+            req.user = new User(
+                user.username,
+                user.password,
+                user.cart,
+                user._id
+            );
             next();
         } else {
             const user = new User("tajib", 1234);
